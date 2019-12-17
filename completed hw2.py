@@ -2,5 +2,4 @@ print("Введите текст. Вводить можно любые слов�
 a = input()
 words = a.split()
 words = list(dict.fromkeys(words))
-for word in words :
-    print(word, end=" ")
+print(" ".join(words))
