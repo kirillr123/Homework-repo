@@ -1,0 +1,1 @@
+print("Project Euler problem 46 solution:", str(sum([a ** a for a in range(1, 1001)]))[len(str(sum([a ** a for a in range(1001)]))) - 10:])

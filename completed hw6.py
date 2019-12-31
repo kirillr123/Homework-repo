@@ -1,21 +1,18 @@
 import re
-sum = 0
-def ispalindromic10(i):
-    if str(i) == str(i)[::-1]:
-        return True
-    else:
-        return False
-
-def ispalindromic2(i):
-    if str(re.sub('(0b)', '', bin(i))) == str(re.sub('(0b)', '', bin(i))[::-1]):
-        return True
-    else:
-        return False
 
 
-for i in range(1,1_000_000):
+def ispalindromic10(a):
+    return str(a) == str(a)[::-1]
+
+
+def ispalindromic2(a):
+    return str(re.sub('(0b)', '', bin(a))) == str(re.sub('(0b)', '', bin(a))[::-1])
+
+
+x = 0
+for i in range(1, 1_000_000):
     if ispalindromic10(i):
         if ispalindromic2(i):
-            sum = sum+i
+            x = x+i
 
-print("Ответ - число: ", sum)
+print("Ответ - число: ", x)
