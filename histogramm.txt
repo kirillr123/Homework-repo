@@ -1,0 +1,17 @@
+{
+for(i = 0; i <= 10; i++)
+	if($0 >= i * 10 && $0 < (i + 1) *10)
+		array[i]++
+}
+END{
+for(i = 0; i <= 10; i++){
+	if(i==10)
+		printf("%3d:%10d ", i * 10, array[i])
+	else printf("%3d - %2d: %4d ",i * 10, ((i + 1) * 10) -1, array[i])
+for(j = 0; j < array[i]; j++){printf("*")}
+print("")
+}
+} 
+
+
+
