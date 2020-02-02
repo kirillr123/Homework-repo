@@ -54,7 +54,7 @@ def main():
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((laddr, lport))
-    print("Server is running!")
+    print("Server is running! Try ask the server about google.com ip or try ADD-ing another one")
     while True:
         data, addr = sock.recvfrom(1024)
         try:
