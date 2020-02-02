@@ -1,6 +1,6 @@
 import exifread
 
-reverse_geocode = __import__("completed hw 16")
+from completed_hws16_17_18 import completed_hw16
 
 
 def _get_if_exist(data, key):
@@ -50,5 +50,5 @@ def get_exif_location(exif_data):
 
 f = open("photo.jpg", 'rb')
 exifdata = exifread.process_file(f)
-print(reverse_geocode.reverse_geocode(get_exif_location(exifdata)))
+print(completed_hw16.reverse_geocode(get_exif_location(exifdata)))
 

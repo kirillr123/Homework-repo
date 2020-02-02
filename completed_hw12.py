@@ -6,9 +6,7 @@ def fib(n):
         if count == n:
             break
         print(a)
-        temp = b
-        b = a + b
-        a = temp
+        a, b = b, a + b
         count += 1
 
 
