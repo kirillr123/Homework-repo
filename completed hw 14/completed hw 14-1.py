@@ -14,5 +14,5 @@ Pickle используется эксклюзивно Питоном, в отл
 """
 Mary = Employee("Mary", "1234", 30000)
 
-f = open('tempdata', 'wb')
+f = open('../tempdata', 'wb')
 pickle.dump(Mary, f)

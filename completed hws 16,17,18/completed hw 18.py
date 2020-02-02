@@ -11,7 +11,7 @@ def compress_image(image, desired_volume, size=(256, 256)):
         image.thumbnail(size, Image.ANTIALIAS)
         image.save(fname, quality=quality, optimize=True)
         quality = quality - 1
-        print(f"QUALITY: {quality}%, FILESIZE: {os.stat(fname).st_size}")
+        # print(f"QUALITY: {quality}%, FILESIZE: {os.stat(fname).st_size}")
         if os.stat(fname).st_size < desired_volume:
             print(f"Все прошло успешно! Сжатый файл находится в папке со скриптом, название {fname}")
             break
