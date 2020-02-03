@@ -1,0 +1,36 @@
+for i in {1..3}
+  do
+    mkdir "Proj$i"
+  done
+
+for i in {1..5}
+  do
+   echo "R$i:R$i:200$i:2000:::" | sudo newusers
+  done
+
+for i in {1..4}
+  do
+   echo "A$i:A$i:201$i:2010:::" | sudo newusers
+  done
+
+for i in {1..3}
+  do
+   echo "I$i:I$i:202$i:2020:::" | sudo newusers
+  done
+
+sudo chmod 1770 Proj1
+sudo chmod 1770 Proj2
+sudo chmod 1770 Proj3
+
+setfacl -dm u:R2:rwx,u:R3:rwx,u:R5:rwx,u:A1:rwx,u:A4:r-x Proj1
+setfacl -m u:R2:rwx,u:R3:rwx,u:R5:rwx,u:A1:rwx,u:A4:r-x Proj1
+
+setfacl -dm u:R1:rwx,u:R5:rwx,u:A1:rwx,u:A2:r-x,u:A3:r-x Proj2
+setfacl -m u:R1:rwx,u:R5:rwx,u:A1:rwx,u:A2:r-x,u:A3:r-x Proj2
+
+setfacl -m u:R1:rwx,u:R2:rwx,u:R4:rwx,u:A2:rwx,u:A1:r-x,u:A4:r-x Proj3
+setfacl -dm u:R1:rwx,u:R2:rwx,u:R4:rwx,u:A2:rwx,u:A1:r-x,u:A4:r-x Proj3
+
+setfacl -m g:2020:rwx Proj1
+setfacl -m g:2020:rwx Proj2
+setfacl -m g:2020:rwx Proj3
